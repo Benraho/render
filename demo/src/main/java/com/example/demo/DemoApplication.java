@@ -1,13 +1,21 @@
-package com.example.demo;
+package com.lynas.demo
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RestController
 
 @SpringBootApplication
-public class DemoApplication {
+class DemoApplication
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-	}
+fun main(args: Array<String>) {
+    runApplication<DemoApplication>(*args)
+}
 
+@RestController
+class DemoController{
+    @GetMapping("/hello")
+    fun hello() : String {
+        return "Hello"
+    }
 }
